@@ -2,13 +2,18 @@ extends layout
 
 block content
   h1= title
-  - let results=[{fruit_name:"Mango",quantity:2,resistance:"Thermal resistance"},{fruit_name:"Pyrex",quantity:5,resistance:"Heat resistance"},{fruit_name:"Asbestos",quantity:3,resistance:"cold resistance"}]
+  
+  -const results = [{ Name: "Mango",  color: "Yellow", price: 250 },{ Name: "Strawberry",  color: "Pink", price: 450 },{ Name: "Orange", , color: "orange", price: 180}]
+
   div(class="container-fluid")
   div(class="row")
-  each value,index in results
-    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.fruit_name} Fruit, quantity is #{value.quantity}, with #{value.resistance}
-  script. 
+    each item,index in results
+      div(class="col-sm-2" onclick=`buy(${index})`)
+        p Name: #{item.name}
+        p Color: #{item.color}
+        p Price: $#{item.price}
+  script.
     function buy(index)
     {
       alert(`You purchased Item ${index+1}`)
-    } 
+    }

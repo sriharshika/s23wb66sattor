@@ -10,6 +10,6 @@ Attributes:
 
 Name (string)
 color (string)
-cost (number)
+Price (number)
 
 
